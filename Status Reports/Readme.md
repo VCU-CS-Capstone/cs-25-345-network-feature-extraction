@@ -11,8 +11,8 @@ Status Report Fall Week XX.md is a template for to copy-paste into new Status re
 
 | Document | Tasks | Accomplishments | Issues |
 |---|---|---|---|
-| Week 1 Status Report | We've accomplished a lot | We'll accomplish even more | No problems to report! |
-| Week 2 Status Report | | | |
+| Week 1 Status Report | Meet with advisor, set up recurring meetings | Established contact with advisor, set up weekly recurring meetings on Thursday/Friday | - |
+| Week 2 Status Report | Complete Github assignment | Completed Github assignment | Trouble contacting sponsor |
 | Week 3 Status Report | | | |
 | Week 4 Status Report | | | |
 | Week 5 Status Report | | | |
