@@ -1,4 +1,4 @@
-# #025-345 Network Feature Extraction from Traffic Captures to Support Automation of High-Fidelity Cyber Simulation Environment
+# CS-25-345 Network Feature Extraction
 ## *DoD Aspire/VCU Engineering*
 ## *A network data packet capture (PCAP)file contains network data that can be used to analyze the network structure, operating systems, and other characteristics, such as network traffic and data packets. An automated approach is needed to extract and categorize PCAP data using artificial intelligence and machine learning assistance to perform rapid data detection, collection, classification, identification/system association, source localization for use in military operations prediction. A data science approach to PCAP data processing needs to be developed, including selection of tools to help address this problem.*
 The directory structure in this GitHub is to allow the project to have all its resources self-contained.
