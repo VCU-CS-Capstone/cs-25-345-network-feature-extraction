@@ -4,7 +4,7 @@
 **Mentor:** Irfan Ahmed  
 **Faculty Advisor:** Irfan Ahmed  
 
-11/8
+11/1
 
 ## 1) Accomplishments this week ##
    - Held our first technical meeting with the sponsors to discuss project implementation details.  
