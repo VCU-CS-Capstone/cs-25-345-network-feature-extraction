@@ -1,0 +1,59 @@
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+reading from file ../data/pcap/Friday-WorkingHours.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+tcp dump complete to ../data/pcap/pcap_os_split
+Beggining nprint on .pcap files in ../data/pcap/pcap_os_split
+nprint successful for file ../data/pcap/pcap_os_split/mac_mac-os-x.pcap
+nprint successful for file ../data/pcap/pcap_os_split/none_kali-linux.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-14.4-32b.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-14.4-64b.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-16.4-32b.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-16.4-64b.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-ubuntu-server.pcap
+nprint successful for file ../data/pcap/pcap_os_split/ubuntu-web-server.pcap
+nprint successful for file ../data/pcap/pcap_os_split/windows-10.pcap
+nprint successful for file ../data/pcap/pcap_os_split/windows-10-pro.pcap
+nprint successful for file ../data/pcap/pcap_os_split/windows-7-pro.pcap
+nprint successful for file ../data/pcap/pcap_os_split/windows-8.1.pcap
+nprint successful for file ../data/pcap/pcap_os_split/windows-vista.pcap
+nprint complete to ../data/npt
+Processing all .npt files in ../data/npt
+Writing file mac_mac-os-x.npt to csv...
+Finished writing file mac_mac-os-x.npt to csv.
+Writing file none_kali-linux.npt to csv...
+Finished writing file none_kali-linux.npt to csv.
+Writing file ubuntu-14.4-32b.npt to csv...
+Finished writing file ubuntu-14.4-32b.npt to csv.
+Writing file ubuntu-14.4-64b.npt to csv...
+Finished writing file ubuntu-14.4-64b.npt to csv.
+Writing file ubuntu-16.4-32b.npt to csv...
+Finished writing file ubuntu-16.4-32b.npt to csv.
+Writing file ubuntu-16.4-64b.npt to csv...
+Finished writing file ubuntu-16.4-64b.npt to csv.
+Writing file ubuntu-ubuntu-server.npt to csv...
+Finished writing file ubuntu-ubuntu-server.npt to csv.
+Writing file ubuntu-web-server.npt to csv...
+Finished writing file ubuntu-web-server.npt to csv.
+Writing file windows-10.npt to csv...
+Finished writing file windows-10.npt to csv.
+Writing file windows-10-pro.npt to csv...
+Finished writing file windows-10-pro.npt to csv.
+Writing file windows-7-pro.npt to csv...
+Finished writing file windows-7-pro.npt to csv.
+Writing file windows-8.1.npt to csv...
+Finished writing file windows-8.1.npt to csv.
+Writing file windows-vista.npt to csv...
+Finished writing file windows-vista.npt to csv.
+Created csv file Friday-WorkingHours.csv in directory ../data/csv
+
+PCAP finished processing. Use ../model to generate, retrain, and test models from this .csv

@@ -1,0 +1,15 @@
+CSV file exists and is readable.
+/home/castrocm5/.local/lib/python3.10/site-packages/xgboost/core.py:158: UserWarning: [01:27:18] WARNING: /workspace/src/learner.cc:740: 
+Parameters: { "use_label_encoder" } are not used.
+
+  warnings.warn(smsg, UserWarning)
+Loading CSV File: Friday-WorkingHours.csv
+CSV file loaded
+Creating X/Y splits and training/testing splits
+X and Y set
+Y is encoded
+Fitting begins...
+Fit complete!
+Testing model with test size of 0.2
+Model Accuracy: 0.848523855324272
+F1 Score (Macro Average): 0.8288384651892264
