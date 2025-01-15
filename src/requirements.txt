@@ -1,5 +1,5 @@
 numpy==2.2.1
 pandas==2.2.3
 scapy==2.6.1
-scikit_learn==1.6.1
+scikit_learn==1.5.2
 xgboost==2.1.3
