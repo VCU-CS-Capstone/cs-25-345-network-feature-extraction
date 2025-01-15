@@ -1,20 +1,16 @@
 import sys
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, classification_report
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
-# Usage message
-usage_message = "Usage: python script.py <filename.csv>"
+usage_message = "Usage: hyperparameter_tuning.py <filename.csv>"
 
-# Check if filename argument is provided
 if len(sys.argv) != 2:
     print(usage_message)
     sys.exit(1)
 
-# Load data
 print(f"Loading CSV File: {sys.argv[1]}")
 try:
     df = pd.read_csv(f"../data/csv/{sys.argv[1]}")
@@ -71,17 +67,19 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y_encoded, test_size=test
 # Set up parameter grid for grid search
 param_grid = {
     # Hyper Parameter Optimization
-    # 16 tree combinations (2 * 2 * 2 * 2)
-    # 'n_estimators': [800, None],
-    'max_depth': [4, 6, 10],
-    'booster' : ['gbtree', 'dart']
-    # 'min_child_weight': [2, None],
-    # 'gamma': [0.0, None]
+    'max_depth': [3, 6, 10],
+    # 'booster' : ['gbtree', 'dart'],
+    # 'learning_rate': [0.01, 0.05, 0.1],
+    # 'n_estimators': [300, 500, 800],
+    # 'min_child_weight': [1, 5, 10],
+    # 'gamma': [0, 0.1, 1],
+    # 'subsample': [0.7, 1.0],
+    # 'colsample_bytree': [0.7, 1.0]
 }
-
 # Initialize XGBoost model
 print("Running XGBoost")
-model = xgb.XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
+# used to use_label_encoder=False, but now causes errors in latest xgboost
+model = xgb.XGBClassifier(eval_metric='mlogloss')
 
 # Perform grid search
 print("Searching grid for optimal parameters")
@@ -99,13 +97,22 @@ with open("answers.txt", "w") as file:
         file.write(f"{key}: {value}\n")
 
 # Train best model
-best_model = xgb.XGBClassifier(**best_params, use_label_encoder=False, eval_metric='mlogloss')
+# used to use_label_encoder=False, but now causes errors in latest xgboost
+best_model = xgb.XGBClassifier(**best_params, eval_metric='mlogloss')
 print("Fitting model")
 best_model.fit(X_train, Y_train)
 
 # Predictions
 print("Predicting...")
 predictions = best_model.predict(X_test)
+
+print("\nConfusion Matrix:")
+cm = confusion_matrix(Y_test, predictions)
+print(cm)
+
+print("\nClassification Report:")
+cr = classification_report(Y_test, predictions)
+print(cr)
 
 # Evaluation
 accuracy = accuracy_score(Y_test, predictions)
