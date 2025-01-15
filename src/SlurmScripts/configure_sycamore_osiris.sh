@@ -82,7 +82,7 @@ update_library_paths() {
 
 install_python_dependencies() {
     echo "=============installing python dependencies============="
-    pip install --user pandas scikit-learn xgboost scapy
+    pip install --user pandas scikit-learn==1.5.2 xgboost scapy
     echo "=============python dependencies installed============="
 }
 
