@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 
 import xgboost as xgb
 
-usage_message = "Usage: python script.py <filename.csv>"
+usage_message = "Usage: python hyperparameter_tuning_randomsearch.py <filename.csv>"
 
 if len(sys.argv) != 2:
     print(usage_message)
@@ -68,13 +68,13 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 # Define parameters for random search
 param_distributions = {
     'max_depth': [3, 5, 7, 10],
-    # 'learning_rate': [0.01, 0.05, 0.1],
-     'n_estimators': [100, 200, 400],
-    # 'gamma': [0, 0.5, 1],
-    # 'min_child_weight': [1, 5, 10],
-    # 'subsample': [0.8, 1],
-    # 'colsample_bytree': [0.8, 1],
-    # 'booster': ['gbtree', 'dart']
+    'learning_rate': [0.01, 0.05, 0.1],
+    'n_estimators': [100, 200, 400],
+    'gamma': [0, 0.5, 1],
+    'min_child_weight': [1, 5, 10],
+    'subsample': [0.8, 1],
+    'colsample_bytree': [0.8, 1],
+    'booster': ['gbtree', 'dart']
 }
 
 xgb_model = xgb.XGBClassifier(
@@ -84,8 +84,8 @@ xgb_model = xgb.XGBClassifier(
 random_search = RandomizedSearchCV(
     estimator=xgb_model,
     param_distributions=param_distributions,
-    # n_iter=20,             # Number of random parameter sets to try
-    n_iter=1,
+    n_iter=5,             # Number of random parameter sets to try
+    # n_iter=1,
     scoring='accuracy',      # Or 'f1_macro', 'f1_weighted' or something else
     n_jobs=-1,
     cv=StratifiedKFold(n_splits=2, shuffle=True, random_state=42),

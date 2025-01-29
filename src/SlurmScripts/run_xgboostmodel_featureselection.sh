@@ -1,15 +1,17 @@
 #!/usr/bin/bash
-#SBATCH --job-name=randomsearch_hyperparameter_tuning_osiris
+#SBATCH --job-name=xgboost_featureselection
 #SBATCH --qos=short
 #SBATCH --cpus-per-task=104
 #SBATCH --mem=1440G
 #SBATCH --time=14-0
-#SBATCH --output=randomsearch_hyperparameter_tuning%j.out
+#SBATCH --output=feature_selection%j.out
 
 start_time=$(date +%s)
 
+# this python file actually needs to be refactored to take combined_test and combined_train
+# ... but ill do that later
 cd /home/"$USER"/osirisml/OsirisML/model || exit
-python hyperparameter_tuning_randomsearch.py combined_train_small.csv
+python xgboostmodel_featureselection.py combined_train.csv chris_model_jan26
 
 end_time=$(date +%s)
 
