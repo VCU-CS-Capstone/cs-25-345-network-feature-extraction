@@ -8,13 +8,9 @@ from sklearn.metrics import accuracy_score, f1_score
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
-# Creates a binary file for the OS fingerprint model using XGBoost
-# By default, a test size of 0.2 is used. See usage to use an additional sys arg to change this
-
 test_size_decimal = 0.2
 usage_message = "Usage: python3 <this_script.py> <data.csv> <model_name.json> OPTIONAL:<decimal for test split size, [0 - 1)>"
 
-# Check if the correct number of arguments are provided
 if len(sys.argv) != 3 and len(sys.argv) != 4:
     print(usage_message)
     print("Note: only provide the file name, not the path. The csv file must be located in ../data/csv")
@@ -59,7 +55,7 @@ tcp_destination_port_start, tcp_destination_port_end = 496, 512
 tcp_sequence_start, tcp_sequence_end = 512, 544
 tcp_ack_start, tcp_ack_end = 544, 576
 
-# Combine all ranges to remove, including the first column (index 0)
+# combine all ranges to remove, including the first column (index 0)
 columns_to_remove = [0] + \
     list(range(ipv4_source_start, ipv4_source_end + 1)) + \
     list(range(ipv4_destination_start, ipv4_destination_end + 1)) + \
@@ -69,24 +65,19 @@ columns_to_remove = [0] + \
     list(range(tcp_sequence_start, tcp_sequence_end + 1)) + \
     list(range(tcp_ack_start, tcp_ack_end + 1))
 
-# Adjusting for removal from a DataFrame where columns are referenced by their integer location
 
 df.drop(df.columns[columns_to_remove], axis=1, inplace=True)
 
-# The last column is the label
 X = df.iloc[:, :-1].values
 y = df.iloc[:, -1].values
 print(f"X and Y set")
 
-# Need to encode labels to integers
 label_encoder = LabelEncoder()
 Y_encoded = label_encoder.fit_transform(y)
 print(f"Y is encoded")
 
-# Split dataset into training and testing set
 X_train, X_test, Y_train, Y_test = train_test_split(
     X, Y_encoded, test_size=test_size_decimal, random_state=42)
-# Initialize and train model
 model = xgb.XGBClassifier(
 	max_depth=10,
 	booster="gbtree",
@@ -121,7 +112,7 @@ selector = SelectFromModel(
 	threshold=-np.inf,
 	max_features=200,
 	prefit=True,
-) 
+)
 
 X_train_reduced = selector.transform(X_train)
 X_test_reduced = selector.transform(X_test)
