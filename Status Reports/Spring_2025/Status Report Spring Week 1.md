@@ -17,4 +17,4 @@
 - Determine dependencies needed to run
 
 ## 3) Issues, problems or concerns ##
-- Use of Singularity containerizing might not be ideal, look into docker
+- Use of Singularity containerizing might not be ideal, look into docker or kubernetes
